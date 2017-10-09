@@ -13,25 +13,26 @@ gameOver = False
 deck = Deck().shuffle()
 
 while gameOver == False:
-    #Making Bets
-    player.bet = raw_input("You have {} coins. How many would you like to bet? >>> ".format(player.bank))
+    # Making Bets
+    player.bet = raw_input(
+        "You have {} coins. How many would you like to bet? >>> ".format(
+            player.bank))
     player.bet = int(player.bet)
     if player.bet > player.bank:
         print "Not enough mulah, chump!"
         continue
     player.bank -= player.bet
 
-    #Deals three cards to player and dealer
+    # Deals three cards to player and dealer
 
     playerCards = []
     dealerCards = []
 
-
-    for i in range(0,3):
+    for i in range(0, 3):
         playerCards.append(deck.draw())
         dealerCards.append(deck.draw())
 
-    #calculates type of hand and returns (type, id/cumulative id/points)
+    # calculates type of hand and returns (type, id/cumulative id/points)
 
     playerHand = handType(playerCards)
     dealerHand = handType(dealerCards)
@@ -41,7 +42,7 @@ while gameOver == False:
         print card
     print "*" * 20
 
-    #gets results in form of (winner, message)
+    # gets results in form of (winner, message)
 
     results = compareResults(playerHand, dealerHand, player)
     winner = results[0]
@@ -55,7 +56,6 @@ while gameOver == False:
     print "*" * 20
     print message
     print "\n"
-
 
     if player.bank == 0:
         print "Game Over"

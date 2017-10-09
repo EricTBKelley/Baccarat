@@ -4,6 +4,7 @@ def calcScore(hand):
         total += card.value
     return total % 10
 
+
 def handType(hand):
     if hand[0].id == hand[1].id == hand[2].id:
         typeOfHand = "3kind"
