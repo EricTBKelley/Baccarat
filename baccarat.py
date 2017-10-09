@@ -31,17 +31,17 @@ while gameOver == False:
         playerCards.append(deck.draw())
         dealerCards.append(deck.draw())
 
-    #calculates score
+    #calculates type of hand and returns (type, id/cumulative id/points)
 
     playerHand = handType(playerCards)
     dealerHand = handType(dealerCards)
-
-    #get results: (winner, message)
 
     print "\nYour hand is...\n"
     for card in playerCards:
         print card
     print "*" * 20
+
+    #gets results in form of (winner, message)
 
     results = compareResults(playerHand, dealerHand, player)
     winner = results[0]
