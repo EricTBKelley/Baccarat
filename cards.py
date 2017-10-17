@@ -22,8 +22,10 @@ class Card(object):
             self.type = "number"
             self.value = number
             self.id = number
+
     def __str__(self):
         return "{} of {}".format(self.number, self.suit)
+
 
 class Player(object):
     def __init__(self, name):
