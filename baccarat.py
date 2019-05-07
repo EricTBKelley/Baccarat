@@ -7,8 +7,17 @@ from compare_results import compareResults
 
 
 print "~~~BACCARAT~~~"
-name = raw_input("What is your name? >>> ")
+name = raw_input("What is your name? >>>")
 player = Player(name)
+PlayedBefore = ""
+while (PlayedBefore != "Y") or (PlayedBefore != "y") or (PlayedBefore != "N") or (PlayedBefore != "n"):
+    response = raw_input("Have you played Baccarat on this machine before? Y or N >>> ")
+    PlayedBefore = str(response)
+    if PlayedBefore == "n" or PlayedBefore == "N":
+        print "\n The best hand is 3 of a kind. \n Next best hand is all face cards. \n The third best hand has a point value of 9. If your hand adds up to 16 your score is 6. 18 would be 8 etc. \n Make your bets and beat the dealer in this game of chance! \n"
+        break
+    if PlayedBefore == "Y" or PlayedBefore == "y":
+        break
 gameOver = False
 deck = Deck().shuffle()
 
