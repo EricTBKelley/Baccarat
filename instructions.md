@@ -1,1 +1,0 @@
-**Download entire file and enter command baccarat.py from the command line**
